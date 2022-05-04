@@ -21,7 +21,8 @@ target_compile_definitions(HEngineRuntime
 
 target_precompile_headers(HEngineRuntime PUBLIC "hepch.h")
 
-target_link_libraries(HEngineRuntime PUBLIC glfw
+target_link_libraries(HEngineRuntime 
+    PUBLIC glfw
     PUBLIC Glad
     PUBLIC glm
     PUBLIC imgui
@@ -44,6 +45,7 @@ target_link_libraries(HEngineRuntime PUBLIC glfw
     PUBLIC spirv-cross-glsl
     PUBLIC headers
     PUBLIC ${vulkan_lib}
+    PUBLIC ImGuiFileDialog
 )
 
 if (WIN32)

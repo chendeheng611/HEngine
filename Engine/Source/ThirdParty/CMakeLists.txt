@@ -169,6 +169,12 @@ if(NOT TARGET shaderc)
     set_target_properties(shaderc_combined_genfile PROPERTIES EXCLUDE_FROM_ALL ON) # Problematic on M1 Macs
 endif()
 
+if(NOT TARGET ImGuiFileDialog)
+    include(ImGuiFileDialog.cmake)
+    set_target_properties(ImGuiFileDialog PROPERTIES FOLDER ${ThirdPartyFolder}/ImGuiFileDialog)
+    NoWarning(ImGuiFileDialog)
+endif()
+
 if(NOT TARGET headers)
     add_library(headers INTERFACE)
     target_include_directories(headers INTERFACE "${ThirdPartyDir}")
